@@ -1,0 +1,22 @@
+{
+  "name": "apostrophe-browser-requirements",
+  "version": "0.5.0",
+  "description": "Politely require certain minimum browser versions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/punkave/apostrophe-browser-requirements.git"
+  },
+  "keywords": [
+    "apostrophe"
+  ],
+  "author": "P'unk Avenue LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/punkave/apostrophe-browser-requirements/issues"
+  },
+  "homepage": "https://github.com/punkave/apostrophe-browser-requirements#readme"
+}

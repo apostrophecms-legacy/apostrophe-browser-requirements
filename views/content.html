@@ -1,0 +1,108 @@
+{# "Why just divs and ids?" This is designed to coexist with any site's CSS and to #}
+{# function properly back to IE6. Mess with it at your peril. (: -Tom #}
+
+<div id="apos-browser-requirements" style="display: none">
+  <style>
+    #apos-browser-requirements
+    {
+      text-align: center;
+      width: 100%;
+    }
+    #apos-browser-requirements-inner
+    {
+      width: 500px;
+      margin: auto;
+      margin-top: 40px;
+      background-color: white;
+      color: black;
+      border: 1px solid gray;
+      border-radius: 6px;
+      padding: 20px;
+      font-family: Arial;
+    }
+    #apos-browser-requirements-logo {
+      margin: 40px;
+      width: 368px;
+      border: none;
+    }
+    #apos-browser-requirements-logo-img {
+      width: 380px;
+      border: none;
+    }
+    #apos-browser-requirements-heading {
+      font-size: 24px;
+      margin: 40px;
+      text-align: left;
+    }
+    #apos-browser-requirements-message {
+      font-size: 16px;
+      margin: 40px;
+      text-align: left;
+    }
+    #apos-browser-requirements-link {
+      font-family: Arial;
+      text-decoration: underline;
+      color: blue;
+    }
+  </style>
+
+  <div id="apos-browser-requirements-inner">
+    <div id="apos-browser-requirements-logo">
+      <img id="apos-browser-requirements-logo-img" src="/images/fallback-logo.png" />
+    </div>
+
+    <div id="apos-browser-requirements-heading">Sorry, your browser is out of date</div>
+    <div id="apos-browser-requirements-message">
+      The web browser you are using is too old to view this site. Please <a id="apos-browser-requirements-link" href="http://browsehappy.com/?locale=en">update your browser</a>. If your browser is currently in "IE8 compatibility mode" or similar, please disable that. Thank you!
+    </div>
+  </div>
+  <script type="text/javascript">
+    (function() {
+      var userAgent = navigator.userAgent;
+      var minimums = {{ minimums | json }};
+      if (!minimums) {
+        return;
+      }
+      if (!minimums.ie) {
+        return;
+      }
+      var ieVersion;
+      // IE10 and below
+      var matches = userAgent.match(/MSIE (\d+)/i);
+      if (matches) {
+        ieVersion = matches[1];
+      }
+      if (!matches) {
+        // IE11+
+        matches = userAgent.match(/Trident.*?rv:(\d+)/i);
+        if (matches) {
+          ieVersion = matches[1];
+        }
+      }
+      if (!matches) {
+        // IE12+ aka Edge
+        matches = userAgent.match(/Edge\/(\d+)/i);
+        if (matches) {
+          ieVersion = matches[1];
+        }
+      }
+      if (!ieVersion) {
+        return;
+      }
+      if (ieVersion < minimums.ie) {
+        showBrowserRequirements();
+      }
+
+      function showBrowserRequirements() {
+        // Move the requirements div to be sole child of the body without using
+        // any Apostrophe js that might not be happy in this browser
+        var requirements = document.getElementById('apos-browser-requirements');
+        requirements.parentNode.removeChild(requirements);
+        var body = document.body;
+        body.innerHTML = '';
+        body.appendChild(requirements);
+        requirements.style.display = 'block';
+      }
+    })();
+  </script>
+</div>
