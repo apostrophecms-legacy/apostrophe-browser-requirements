@@ -1,6 +1,6 @@
 {
   "name": "apostrophe-browser-requirements",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Politely require certain minimum browser versions",
   "main": "index.js",
   "scripts": {

@@ -36,3 +36,11 @@ You can override `views/content.html` at project level if you need to change the
 ## Limitations
 
 This module can't help IE6 and IE7 users because their JavaScript and CSS support is too weak to cope. If you need to display messages to those, use IE conditional comments.
+
+## "What about Microsoft Edge?"
+
+This module treats Microsoft Edge as IE 12, 13, etc. Set the `ie` minimum accordingly.
+
+## "What about blocking IE completely?"
+
+Oh come on kids, that browser's come a long way.
