@@ -33,9 +33,9 @@ If you don't configure a logo, it looks a little "unofficial," so we recommend p
 
 You can override `views/content.html` at project level if you need to change the text or don't want to link to `browsehappy.com`.
 
-## Limitations
+## IE version support
 
-This module can't help IE6 and IE7 users because their JavaScript and CSS support is too weak to cope. If you need to display messages to those, use IE conditional comments.
+This module can display the message on versions of IE going back to IE6.
 
 ## "What about Microsoft Edge?"
 
