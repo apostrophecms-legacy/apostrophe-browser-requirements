@@ -47,9 +47,11 @@
   </style>
 
   <div id="apos-browser-requirements-inner">
-    <div id="apos-browser-requirements-logo">
-      <img id="apos-browser-requirements-logo-img" src="/images/fallback-logo.png" />
-    </div>
+    {% if logo %}
+      <div id="apos-browser-requirements-logo">
+        <img id="apos-browser-requirements-logo-img" src="{{ logo }}" />
+      </div>
+    {% endif %}
 
     <div id="apos-browser-requirements-heading">Sorry, your browser is out of date</div>
     <div id="apos-browser-requirements-message">
