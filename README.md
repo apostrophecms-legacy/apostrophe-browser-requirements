@@ -29,7 +29,10 @@ modules: {
 In `layout.html`:
 
 ```markup
+{# At the END of the DOM so it can easily remove everything else #}
+{% block extraBody %}
 {{ apos.browserRequirements.message() }}
+{% endblock %}
 ```
 
 And optionally, in your CSS:
