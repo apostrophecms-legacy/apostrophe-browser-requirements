@@ -1,3 +1,7 @@
+# ⛔️ **DEPRECATED** — do not use for new projects
+
+See [our current docs](https://docs.apostrophecms.org/)
+
 # apostrophe-browser-requirements
 
 Display a polite message telling users with browsers that are too old that they must upgrade or switch browsers to view the site.
